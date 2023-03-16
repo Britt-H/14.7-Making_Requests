@@ -19,15 +19,27 @@ function create(body) {
 
 function show(id) {
   axios
-    .get(BASE_URL + "/" + id)
+    .get(`${BASE_URL}/${id}`)
     .then((response) => {
       console.log(response.data)
     })
 }
 
-function update(id, body) {}
+function update(id, body) {
+  axios
+    .put(`${BASE_URL}/${id}`, body)
+    .then ((response) => {
+      console.log(response.data)
+    })
+}
 
-function destroy(id) {}
+function destroy(id) {
+  axios
+    .delete(`${BASE_URL}/${id}`)
+    .then ((response) => {
+      console.log(response.data)
+    })
+}
 
 module.exports = {
   index,
