@@ -17,7 +17,13 @@ function create(body) {
     })
 }
 
-function show(id) {}
+function show(id) {
+  axios
+    .get(BASE_URL + "/" + id)
+    .then((response) => {
+      console.log(response.data)
+    })
+}
 
 function update(id, body) {}
 
